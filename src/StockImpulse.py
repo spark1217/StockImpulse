@@ -1,7 +1,7 @@
 import discord 
 import random
 
-TOKEN='MTAyMjk0MjMwNjM1MDk0NDM0Ng.G24d9m.roxUvVQaRrQjedKAkjTgTa70T9lznBnxrOsmHk'
+TOKEN='DEFAULT'
 
 client = discord.Client(intents=discord.Intents.default())
 
