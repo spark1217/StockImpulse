@@ -1,10 +1,18 @@
 from email import message
 import discord 
 import random
+import requests
+import finnhub
+import config
 
-TOKEN='DEFAULT'
+# tokens
+DISCORD_TOKEN = config.tokens['discord_token']
+FINNHUB_TOKEN = config.tokens['finnhub_token']
 
 client = discord.Client(intents=discord.Intents.all())
+
+# setup finnhub
+finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 
 @client.event
 async def on_ready():
@@ -20,7 +28,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.channel.name == 'general':
+    if message.channel.name == 'bot-testing':
         if user_message.lower() == 'hello':
             await message.channel.send(f'Hello {username}!')
             return
@@ -35,5 +43,10 @@ async def on_message(message):
         await message.channel.send(f'This can be used anywhere {username}!')
         return
 
+# Example stock output
+# https://github.com/Finnhub-Stock-API/finnhub-python
+res = finnhub_client.stock_candles('AAPL', 'D', 1590988249, 1591852249)
+print(res)
 
-client.run(TOKEN)
+client.run(DISCORD_TOKEN)
+
