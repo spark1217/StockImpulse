@@ -1,7 +1,5 @@
-from email import message
-import discord 
-import random
-import requests
+import discord
+from discord.ext import commands
 import finnhub
 import config
 
@@ -9,7 +7,7 @@ import config
 DISCORD_TOKEN = config.tokens['discord_token']
 FINNHUB_TOKEN = config.tokens['finnhub_token']
 
-client = discord.Client(intents=discord.Intents.all())
+client = commands.Bot(command_prefix='!', intents=discord.Intents.all()) #discord.Client(intents=discord.Intents.all())
 
 # setup finnhub
 finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
@@ -19,17 +17,59 @@ finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 async def on_ready():
     print('Logged in {0.user}'.format(client))
 
+@client.command(name='stock')
+async def stock(ctx, stock):
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f'```Stock {stock} does not exist or has no value.```')
+        return
+    if (stockInfo["d"] >= 0):
+        await ctx.send(f"""```{stock} Information
+Current Price:    ${stockInfo["c"]}
+Change:           ${stockInfo["d"]}
+Percent Change:   {stockInfo["dp"]}%
+Daily High:       ${stockInfo["h"]}
+Daily Low:        ${stockInfo["l"]}
+Open Price:       ${stockInfo["o"]}
+Last Close Price: ${stockInfo["pc"]}```""")
+    else:
+        await ctx.send(f"""```{stock} Information
+Current Price:    ${stockInfo["c"]}
+Change:          -${abs(stockInfo["d"])}
+Percent Change:   {stockInfo["dp"]}%
+Daily High:       ${stockInfo["h"]}
+Daily Low:        ${stockInfo["l"]}
+Open Price:       ${stockInfo["o"]}
+Last Close Price: ${stockInfo["pc"]}```""")
+
+@client.command(name="price")
+async def price(ctx, stock):
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f'```Stock {stock} does not exist or has no value.```')
+        return
+    await ctx.send(f'```{stock} is currently ${stockInfo["c"]}```')
+
+
 @client.event
-async def on_message(message):
+async def on_message(message):    
+    if message.author == client.user:
+        return
+
+    await client.process_commands(message) # Process commands first (REQUIRED)
+    
     username = str(message.author).split('#')[0]
     user_message = str(message.content)
-    channel = str(message.channel.name)
+    if not (isinstance(message.channel, discord.DMChannel)):
+        channel = str(message.channel.name) # Crashes if message is a DM
+    else:
+        channel = str('DMChannel')
     print(f'{username}: {user_message} ({channel})')
 
     if message.author == client.user:
         return
-    
-    if message.channel.name == 'bot-testing':
+
+    if channel == 'bot-testing':
         if user_message.lower() == 'hello':
             await message.channel.send(f'Hello {username}!')
             return
