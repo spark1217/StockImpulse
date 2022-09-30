@@ -14,6 +14,7 @@ client = discord.Client(intents=discord.Intents.all())
 # setup finnhub
 finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 
+# print message when ready
 @client.event
 async def on_ready():
     print('Logged in {0.user}'.format(client))
