@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/LICENSE)  
+[![DOI](https://zenodo.org/badge/540581485.svg)](https://zenodo.org/badge/latestdoi/540581485)  
+[![badge](https://github.com/spark1217/StockImpulse.git/actions/workflows/build.yml/badge.svg)](https://github.com/spark1217/StockImpulse.git/blob/main/.github/workflows/build.yml)  
+  
 # StockImpulse
 This repo is for Project 1.
 StockImpulse is a discord bot retrieving stock information.  
@@ -5,7 +9,7 @@ StockImpulse is a discord bot retrieving stock information.
 
 
 # Configuration  
-In the config.py file, edit YOUR_TOKEN for discord and finnhub.  
+Create `config.py` in the `src` folder. In the `config.py` file, add your valid tokens for discord and finnhub.  
 ```
 tokens = {
     'discord_token': "YOUR_DISCORD_TOKEN",
