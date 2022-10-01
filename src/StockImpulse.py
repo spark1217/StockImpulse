@@ -86,8 +86,9 @@ async def on_message(message):
 
 # Example stock output
 # https://github.com/Finnhub-Stock-API/finnhub-python
-res = finnhub_client.stock_candles('AAPL', 'D', 1590988249, 1591852249)
-print(res)
+#res = finnhub_client.stock_candles('AAPL', 'D', 1590988249, 1591852249)
+#print(res)
 
-client.run(DISCORD_TOKEN)
+if __name__ == "__main__":
+    client.run(DISCORD_TOKEN)
 
