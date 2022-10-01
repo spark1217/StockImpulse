@@ -31,8 +31,8 @@ jobs:
         run: |
           cat << EOF > config.py
           tokens = {
-          'discord_token': ${{ secrets.DISCORD_TOKEN }},
-          'finnhub_token': ${{ secrets.FINNHUB_TOKEN }}
+              'discord_token': "${{ secrets.DISCORD_TOKEN }}",
+              'finnhub_token': "${{ secrets.FINNHUB_TOKEN }}"
           }
           EOF
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
