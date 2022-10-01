@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: test
 
 # Controls when the workflow will run
 on:
@@ -27,13 +27,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: create config
-        run:
-          cat << EOF > src/config.py
-          tokens = {
-            'discord_token':${{ secrets.DISCORD_TOKEN }},
-            'finnhub_token':${{ secrets.FINNHUB_TOKEN }}
-          }
-          EOF
+        with:
+          path: src/config.py
+          write-mode: overwrite
+          contents: 
+            tokens = {
+              'discord_token':${{ secrets.DISCORD_TOKEN }},
+              'finnhub_token':${{ secrets.FINNHUB_TOKEN }}
+            }
 
       # Runs a set of commands using the runners shell
       - name: Run a bot
