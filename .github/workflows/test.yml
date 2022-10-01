@@ -33,8 +33,12 @@ jobs:
       - name: create config
         working-directory: ./src
         run: |
-          echo "tokens = {'discord_token':${{ secrets.DISCORD_TOKEN }}, 'finnhub_token':${{ secrets.FINNHUB_TOKEN }} }" > config.py
-            
+          cat << EOF > config.py
+          tokens = {
+            'discord_token':"${{ secrets.DISCORD_TOKEN }}",
+            'finnhub_token':"${{ secrets.FINNHUB_TOKEN }}"
+          }
+          EOF  
       # Runs a set of commands using the runners shell
       - name: Run a bot
         working-directory: ./src
