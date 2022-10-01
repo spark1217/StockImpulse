@@ -24,6 +24,14 @@ jobs:
       - run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Create config file
+        run: |
+          cat << EOF > config.py
+          tokens = {
+          'discord_token': TOKEN,
+          'finnhub_token': TOKEN
+          }
+          EOF
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
       - run: PYTHONPATH=src pdoc -o docs --html --force src
       - uses: actions/upload-pages-artifact@v1
