@@ -2,6 +2,7 @@ import config
 import discord
 from discord.ext import commands
 import finnhub
+import time
 
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
@@ -18,3 +19,5 @@ async def on_ready_test():
     print('Logged in {0.user}'.format(client))
 
 client.run(DISCORD_TOKEN)
+time.sleep(10)
+client.close()
