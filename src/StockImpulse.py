@@ -5,8 +5,11 @@ import config
 
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
+"""Discord API Token"""
 FINNHUB_TOKEN = config.tokens['finnhub_token']
+"""FinnHub API Token"""
 
+# setup discord bot
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all()) #discord.Client(intents=discord.Intents.all())
 
 # setup finnhub
@@ -15,10 +18,12 @@ finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 # print message when ready
 @client.event
 async def on_ready():
+    """Prints a message when the bot comes online."""
     print('Logged in {0.user}'.format(client))
 
 @client.command(name='stock')
 async def stock(ctx, stock):
+    """Prints information regarding a given stock. This command is run by typing "!stock <Stock>". The information is gotten through an API call to finnhub."""
     stockInfo = finnhub_client.quote(stock)
     if all((v == 0) or (v == None) for v in stockInfo.values()):
         await ctx.send(f'```Stock {stock} does not exist or has no value.```')
@@ -44,6 +49,8 @@ Last Close Price: ${stockInfo["pc"]}```""")
 
 @client.command(name="price")
 async def price(ctx, stock):
+    """Prints the price of a given stock. This command is run by typing "!price <Stock>".
+    The information is gotten through an API call to finnhub."""
     stockInfo = finnhub_client.quote(stock)
     if all((v == 0) or (v == None) for v in stockInfo.values()):
         await ctx.send(f'```Stock {stock} does not exist or has no value.```')

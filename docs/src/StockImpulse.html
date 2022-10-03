@@ -33,8 +33,11 @@ import config
 
 # tokens
 DISCORD_TOKEN = config.tokens[&#39;discord_token&#39;]
+&#34;&#34;&#34;Discord API Token&#34;&#34;&#34;
 FINNHUB_TOKEN = config.tokens[&#39;finnhub_token&#39;]
+&#34;&#34;&#34;FinnHub API Token&#34;&#34;&#34;
 
+# setup discord bot
 client = commands.Bot(command_prefix=&#39;!&#39;, intents=discord.Intents.all()) #discord.Client(intents=discord.Intents.all())
 
 # setup finnhub
@@ -43,10 +46,12 @@ finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 # print message when ready
 @client.event
 async def on_ready():
+    &#34;&#34;&#34;Prints a message when the bot comes online.&#34;&#34;&#34;
     print(&#39;Logged in {0.user}&#39;.format(client))
 
 @client.command(name=&#39;stock&#39;)
 async def stock(ctx, stock):
+    &#34;&#34;&#34;Prints information regarding a given stock. This command is run by typing &#34;!stock &lt;Stock&gt;&#34;. The information is gotten through an API call to finnhub.&#34;&#34;&#34;
     stockInfo = finnhub_client.quote(stock)
     if all((v == 0) or (v == None) for v in stockInfo.values()):
         await ctx.send(f&#39;```Stock {stock} does not exist or has no value.```&#39;)
@@ -72,6 +77,8 @@ Last Close Price: ${stockInfo[&#34;pc&#34;]}```&#34;&#34;&#34;)
 
 @client.command(name=&#34;price&#34;)
 async def price(ctx, stock):
+    &#34;&#34;&#34;Prints the price of a given stock. This command is run by typing &#34;!price &lt;Stock&gt;&#34;.
+    The information is gotten through an API call to finnhub.&#34;&#34;&#34;
     stockInfo = finnhub_client.quote(stock)
     if all((v == 0) or (v == None) for v in stockInfo.values()):
         await ctx.send(f&#39;```Stock {stock} does not exist or has no value.```&#39;)
@@ -124,6 +131,17 @@ if __name__ == &#34;__main__&#34;:
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="src.StockImpulse.DISCORD_TOKEN"><code class="name">var <span class="ident">DISCORD_TOKEN</span></code></dt>
+<dd>
+<div class="desc"><p>Discord API Token</p></div>
+</dd>
+<dt id="src.StockImpulse.FINNHUB_TOKEN"><code class="name">var <span class="ident">FINNHUB_TOKEN</span></code></dt>
+<dd>
+<div class="desc"><p>FinnHub API Token</p></div>
+</dd>
+</dl>
 </section>
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
@@ -175,13 +193,14 @@ async def on_message(message):
 <span>async def <span class="ident">on_ready</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Prints a message when the bot comes online.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@client.event
 async def on_ready():
+    &#34;&#34;&#34;Prints a message when the bot comes online.&#34;&#34;&#34;
     print(&#39;Logged in {0.user}&#39;.format(client))</code></pre>
 </details>
 </dd>
@@ -199,6 +218,12 @@ async def on_ready():
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="src" href="index.html">src</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="src.StockImpulse.DISCORD_TOKEN" href="#src.StockImpulse.DISCORD_TOKEN">DISCORD_TOKEN</a></code></li>
+<li><code><a title="src.StockImpulse.FINNHUB_TOKEN" href="#src.StockImpulse.FINNHUB_TOKEN">FINNHUB_TOKEN</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
