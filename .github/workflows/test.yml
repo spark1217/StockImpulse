@@ -31,7 +31,7 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: create config
-        working-directory: ./src
+        working-directory: ./test
         run: |
           cat <<-EOF > config.py
           tokens = {
