@@ -125,7 +125,46 @@ async def on_message(message):
 #print(res)
 
 if __name__ == &#34;__main__&#34;:
-    client.run(DISCORD_TOKEN)</code></pre>
+    client.run(DISCORD_TOKEN)
+
+#---------------------------------------------------------#
+# Everything below this line is for documentation purposes
+# and does not perform any function.
+#---------------------------------------------------------#
+async def priceCommand(ctx, stock):
+    &#34;&#34;&#34;Prints the price of a given stock. This command is run by typing &#34;!price &lt;Stock&gt;&#34;.
+    The information is gotten through an API call to finnhub.&#34;&#34;&#34;
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f&#39;```Stock {stock} does not exist or has no value.```&#39;)
+        return
+    await ctx.send(f&#39;```{stock} is currently ${stockInfo[&#34;c&#34;]}```&#39;)
+
+@client.command(name=&#39;stockCommand&#39;)
+async def stockCommand(ctx, stock):
+    &#34;&#34;&#34;Prints information regarding a given stock. This command is run by typing &#34;!stock &lt;Stock&gt;&#34;. The information is gotten through an API call to finnhub.&#34;&#34;&#34;
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f&#39;```Stock {stock} does not exist or has no value.```&#39;)
+        return
+    if (stockInfo[&#34;d&#34;] &gt;= 0):
+        await ctx.send(f&#34;&#34;&#34;```{stock} Information
+Current Price:    ${stockInfo[&#34;c&#34;]}
+Change:           ${stockInfo[&#34;d&#34;]}
+Percent Change:   {stockInfo[&#34;dp&#34;]}%
+Daily High:       ${stockInfo[&#34;h&#34;]}
+Daily Low:        ${stockInfo[&#34;l&#34;]}
+Open Price:       ${stockInfo[&#34;o&#34;]}
+Last Close Price: ${stockInfo[&#34;pc&#34;]}```&#34;&#34;&#34;)
+    else:
+        await ctx.send(f&#34;&#34;&#34;```{stock} Information
+Current Price:    ${stockInfo[&#34;c&#34;]}
+Change:          -${abs(stockInfo[&#34;d&#34;])}
+Percent Change:   {stockInfo[&#34;dp&#34;]}%
+Daily High:       ${stockInfo[&#34;h&#34;]}
+Daily Low:        ${stockInfo[&#34;l&#34;]}
+Open Price:       ${stockInfo[&#34;o&#34;]}
+Last Close Price: ${stockInfo[&#34;pc&#34;]}```&#34;&#34;&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -204,6 +243,26 @@ async def on_ready():
     print(&#39;Logged in {0.user}&#39;.format(client))</code></pre>
 </details>
 </dd>
+<dt id="src.StockImpulse.priceCommand"><code class="name flex">
+<span>async def <span class="ident">priceCommand</span></span>(<span>ctx, stock)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Prints the price of a given stock. This command is run by typing "!price <Stock>".
+The information is gotten through an API call to finnhub.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def priceCommand(ctx, stock):
+    &#34;&#34;&#34;Prints the price of a given stock. This command is run by typing &#34;!price &lt;Stock&gt;&#34;.
+    The information is gotten through an API call to finnhub.&#34;&#34;&#34;
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f&#39;```Stock {stock} does not exist or has no value.```&#39;)
+        return
+    await ctx.send(f&#39;```{stock} is currently ${stockInfo[&#34;c&#34;]}```&#39;)</code></pre>
+</details>
+</dd>
 </dl>
 </section>
 <section>
@@ -230,6 +289,7 @@ async def on_ready():
 <ul class="">
 <li><code><a title="src.StockImpulse.on_message" href="#src.StockImpulse.on_message">on_message</a></code></li>
 <li><code><a title="src.StockImpulse.on_ready" href="#src.StockImpulse.on_ready">on_ready</a></code></li>
+<li><code><a title="src.StockImpulse.priceCommand" href="#src.StockImpulse.priceCommand">priceCommand</a></code></li>
 </ul>
 </li>
 </ul>

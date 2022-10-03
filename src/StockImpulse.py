@@ -99,3 +99,40 @@ async def on_message(message):
 if __name__ == "__main__":
     client.run(DISCORD_TOKEN)
 
+#---------------------------------------------------------#
+# Everything below this line is for documentation purposes
+# and does not perform any function.
+#---------------------------------------------------------#
+async def priceCommand(ctx, stock):
+    """Prints the price of a given stock. This command is run by typing "!price <Stock>".
+    The information is gotten through an API call to finnhub."""
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f'```Stock {stock} does not exist or has no value.```')
+        return
+    await ctx.send(f'```{stock} is currently ${stockInfo["c"]}```')
+
+async def stockCommand(ctx, stock):
+    """Prints information regarding a given stock. This command is run by typing "!stock <Stock>". The information is gotten through an API call to finnhub."""
+    stockInfo = finnhub_client.quote(stock)
+    if all((v == 0) or (v == None) for v in stockInfo.values()):
+        await ctx.send(f'```Stock {stock} does not exist or has no value.```')
+        return
+    if (stockInfo["d"] >= 0):
+        await ctx.send(f"""```{stock} Information
+Current Price:    ${stockInfo["c"]}
+Change:           ${stockInfo["d"]}
+Percent Change:   {stockInfo["dp"]}%
+Daily High:       ${stockInfo["h"]}
+Daily Low:        ${stockInfo["l"]}
+Open Price:       ${stockInfo["o"]}
+Last Close Price: ${stockInfo["pc"]}```""")
+    else:
+        await ctx.send(f"""```{stock} Information
+Current Price:    ${stockInfo["c"]}
+Change:          -${abs(stockInfo["d"])}
+Percent Change:   {stockInfo["dp"]}%
+Daily High:       ${stockInfo["h"]}
+Daily Low:        ${stockInfo["l"]}
+Open Price:       ${stockInfo["o"]}
+Last Close Price: ${stockInfo["pc"]}```""")
