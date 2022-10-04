@@ -17,7 +17,8 @@ finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 @client.event
 async def on_ready_test():
     print('Logged in {0.user}'.format(client))
+    time.sleep(10)
+    client.close()
 
 client.run(DISCORD_TOKEN)
-time.sleep(10)
-client.close()
+
