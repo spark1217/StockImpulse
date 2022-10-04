@@ -8,7 +8,7 @@ import time
 DISCORD_TOKEN = config.tokens['discord_token']
 FINNHUB_TOKEN = config.tokens['finnhub_token']
 
-client = commands.Bot(command_prefix='!', intents=discord.Intents.all()) #discord.Client(intents=discord.Intents.all())
+client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 # setup finnhub
 finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
