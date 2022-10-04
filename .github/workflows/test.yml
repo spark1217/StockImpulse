@@ -42,4 +42,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a bot test
         working-directory: ./test
-        run: timeout -k 10s 30s (python test.py)
+        run: timeout -k 10 python test.py
