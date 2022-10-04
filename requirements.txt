@@ -1,3 +1,4 @@
 finnhub-python==2.4.14
 discord.py==2.0.1
 pdoc3==0.10.0
+pylint==2.15.3
