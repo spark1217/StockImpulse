@@ -2,7 +2,7 @@
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to HW-Group32 and its packages, which are hosted in the [Group Repository](https://github.com/spark1217/StockImpulse) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to StockImpulse, which is hosted in the [Group Repository](https://github.com/spark1217/StockImpulse) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
 
@@ -27,13 +27,13 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 ## What should I know before I get started?
 
-This repository used to host our homework assignments for CSC-510. The content in this repository is designed to translate a lua project into a different programming language.
+This repository used to host our project for CSC-510. The content in this repository is designed to be the foundation for a discord bot that handles information regarding stocks, not a completed product.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for our Homework Repository. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through submitting a bug report for StockImpulse. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
 Before creating bug reports, please check the posted issues as you might find out that you don't need to create a new one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report).
 
@@ -115,10 +115,10 @@ While the prerequisites above must be satisfied prior to having your pull reques
 ### Whitespace Styleguide
 
 - Make sure indentation is consistent with the rest of the project
-- Make sure there is no trailing white space on any line of code
+- Make sure your code styling is in line with pylint requirements
 
 ### Documentation Styleguide
 
- - Make sure all relevant code is documented to cleary describe what it does
+ - Make sure all relevant code is documented to cleary describe what it does using docstrings
  - Make sure the formatting of the documentation is consistent with the rest of the project
 
