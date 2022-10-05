@@ -24,15 +24,6 @@ async def on_ready():
     """Prints a message when the bot comes online."""
     print(f'Logged in {client}')
 
-@client.event
-async def on_message(message):
-    ''' run on message sent to a channel '''
-    # allow messages from test bot
-    if message.author.bot and message.author.id == 1027018277408477194:
-        ctx = await client.get_context(message)
-        await client.invoke(ctx)
-    await client.process_commands(message)
-
 @client.command(name='stock')
 async def stock(ctx, stock_name):
     """Prints information regarding a given stock. This command is run by typing "!stock "stock"".
