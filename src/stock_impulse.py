@@ -97,7 +97,7 @@ if __name__ == "__main__":
 # and does not perform any function.
 #---------------------------------------------------------#
 
-async def stock(ctx, stock_name):
+async def stock_command(ctx, stock_name):
     """Prints information regarding a given stock. This command is run by typing "!stock "stock"".
     The information is gotten through an API call to finnhub."""
     try:
