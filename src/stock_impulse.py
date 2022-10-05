@@ -6,22 +6,17 @@ and intents, and starting the bot.
 
 import discord
 from discord.ext import commands
-import finnhub
 import config
-import json
-import requests
+import stocks
+import cryptos
+
 
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
 """Discord API Token"""
-FINNHUB_TOKEN = config.tokens['finnhub_token']
-"""FinnHub API Token"""
 
 # setup discord bot
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
-
-# setup finnhub
-finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 
 # print message when ready
 @client.event
@@ -42,10 +37,12 @@ async def on_message(message):
 async def stock(ctx, stock_name):
     """Prints information regarding a given stock. This command is run by typing "!stock "stock"".
     The information is gotten through an API call to finnhub."""
-    stock_info = finnhub_client.quote(stock_name)
-    if all((v == 0) or (v is None) for v in stock_info.values()):
-        await ctx.send(f'```Stock {stock_name} does not exist or has no value.```')
+    try:
+        stock_info = stocks.get_stock_info(stock_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
         return
+
     if stock_info["d"] >= 0:
         await ctx.send(f"""```{stock_name} Information
 Current Price:    ${stock_info["c"]}
@@ -68,18 +65,23 @@ Last Close Price: ${stock_info["pc"]}```""")
 @client.command(name="price")
 async def price(ctx, stock_name):
     """Prints the price of a given stock. This command is run by typing "!price "stock".
-    The information is gotten through an API call to finnhub."""
-    stock_info = finnhub_client.quote(stock_name)
-    if all((v == 0) or (v is None) for v in stock_info.values()):
-        await ctx.send(f'```Stock {stock_name} does not exist or has no value.```')
+    The information is gotten through an API call to FinnHub."""
+    try:
+        stock_info = stocks.get_stock_info(stock_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
         return
     await ctx.send(f'```{stock_name} is currently ${stock_info["c"]}```')
 
 @client.command(name="crypto")
 async def crypto(ctx, crypto_name):
-    key = "https://api.binance.com/api/v3/ticker/price?symbol=" + crypto_name + "USDT"
-    data = requests.get(key)  
-    data = data.json()
+    """Prints the current value of the given crypto currency. This command is run by
+    typing !crypto "crypto". The information is gotten from binance."""
+    try:
+        data = cryptos.get_crypto_info(crypto_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
+        return
     cprice =  round(float(data['price']), 3)
     await ctx.send(f"```{data['symbol']} price is ${cprice}```")
 # Example stock output
@@ -94,22 +96,16 @@ if __name__ == "__main__":
 # Everything below this line is for documentation purposes
 # and does not perform any function.
 #---------------------------------------------------------#
-async def price_command(ctx, stock_name):
-    """Prints the price of a given stock. This command is run by typing "!price "stock"".
-    The information is gotten through an API call to finnhub."""
-    stock_info = finnhub_client.quote(stock_name)
-    if all((v == 0) or (v is None) for v in stock_info.values()):
-        await ctx.send(f'```Stock {stock_name} does not exist or has no value.```')
-        return
-    await ctx.send(f'```{stock_name} is currently ${stock_info["c"]}```')
 
-async def stock_command(ctx, stock_name):
+async def stock(ctx, stock_name):
     """Prints information regarding a given stock. This command is run by typing "!stock "stock"".
-     The information is gotten through an API call to finnhub."""
-    stock_info = finnhub_client.quote(stock_name)
-    if all((v == 0) or (v is None) for v in stock_info.values()):
-        await ctx.send(f'```Stock {stock_name} does not exist or has no value.```')
+    The information is gotten through an API call to finnhub."""
+    try:
+        stock_info = stocks.get_stock_info(stock_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
         return
+
     if stock_info["d"] >= 0:
         await ctx.send(f"""```{stock_name} Information
 Current Price:    ${stock_info["c"]}
@@ -128,3 +124,24 @@ Daily High:       ${stock_info["h"]}
 Daily Low:        ${stock_info["l"]}
 Open Price:       ${stock_info["o"]}
 Last Close Price: ${stock_info["pc"]}```""")
+
+async def price_command(ctx, stock_name):
+    """Prints the price of a given stock. This command is run by typing "!price "stock".
+    The information is gotten through an API call to FinnHub."""
+    try:
+        stock_info = stocks.get_stock_info(stock_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
+        return
+    await ctx.send(f'```{stock_name} is currently ${stock_info["c"]}```')
+
+async def crypto_command(ctx, crypto_name):
+    """Prints the current value of the given crypto currency. This command is run by
+    typing !crypto "crypto". The information is gotten from binance."""
+    try:
+        data = cryptos.get_crypto_info(crypto_name)
+    except NameError as exception:
+        await ctx.send(str(exception))
+        return
+    cprice =  round(float(data['price']), 3)
+    await ctx.send(f"```{data['symbol']} price is ${cprice}```")
