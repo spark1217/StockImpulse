@@ -8,6 +8,8 @@ import discord
 from discord.ext import commands
 import finnhub
 import config
+import json
+import requests
 
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
@@ -26,6 +28,15 @@ finnhub_client = finnhub.Client(api_key=FINNHUB_TOKEN)
 async def on_ready():
     """Prints a message when the bot comes online."""
     print(f'Logged in {client}')
+
+@client.event
+async def on_message(message):
+    ''' run on message sent to a channel '''
+    # allow messages from test bot
+    if message.author.bot and message.author.id == 1027018277408477194:
+        ctx = await client.get_context(message)
+        await client.invoke(ctx)
+    await client.process_commands(message)
 
 @client.command(name='stock')
 async def stock(ctx, stock_name):
@@ -64,6 +75,13 @@ async def price(ctx, stock_name):
         return
     await ctx.send(f'```{stock_name} is currently ${stock_info["c"]}```')
 
+@client.command(name="crypto")
+async def crypto(ctx, crypto_name):
+    key = "https://api.binance.com/api/v3/ticker/price?symbol=" + crypto_name + "USDT"
+    data = requests.get(key)  
+    data = data.json()
+    cprice =  round(float(data['price']), 3)
+    await ctx.send(f"```{data['symbol']} price is ${cprice}```")
 # Example stock output
 # https://github.com/Finnhub-Stock-API/finnhub-python
 #res = finnhub_client.stock_candles('AAPL', 'D', 1590988249, 1591852249)
