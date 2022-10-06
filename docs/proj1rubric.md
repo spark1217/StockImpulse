@@ -32,7 +32,7 @@ Grader:
 |Chat channel: exists||No evidence a chat channel existss|
 |Test cases: a large proportion of the issues related to handling failing cases.||https://github.com/spark1217/StockImpulse/issues |
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files||Badges on ReadME.https://github.com/spark1217/StockImpulse/blob/main/README.md|
-|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|1|Config file only updated by one person. https://github.com/spark1217/StockImpulse/tree/main/.github/workflows |
+|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)||Config file only updated by one person. https://github.com/spark1217/StockImpulse/tree/main/.github/workflows |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)||Badges on ReadME. https://github.com/spark1217/StockImpulse/blob/main/README.md |
 |Evidence that the members of the team are working across multiple places in the code base||https://github.com/spark1217/StockImpulse/commits/main |
 |Short release cycles||No evidence anyone had to wait for others to work.|
