@@ -10,7 +10,7 @@ import requests
 # tokens
 DISCORD_TOKEN = config.tokens['testing_token']
 FINNHUB_TOKEN = config.tokens['finnhub_token']
-SERVER_TOKEN = "1024818913965510757"
+SERVER_TOKEN = config.tokens['channel-token']
 
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
