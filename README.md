@@ -7,6 +7,8 @@ This repo is for Project 1.
 StockImpulse is a discord bot retrieving stock information.  
 See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).  
 
+# Prerequiste
+Download [Python3.x](https://www.python.org/downloads/) on your system.
 
 # Installation  
 Install `requirement.txt` before running codes.
@@ -23,3 +25,5 @@ tokens = {
 # Stock API  
 [Finnhub API](https://finnhub.io/docs/api/introduction) is used.   
 [https://github.com/Finnhub-Stock-API/finnhub-python](https://github.com/Finnhub-Stock-API/finnhub-python)  
+# Road Map
+[List of road map and corresponding their issues](https://github.com/users/spark1217/projects/2)

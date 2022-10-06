@@ -15,6 +15,7 @@ DISCORD_TOKEN = config.tokens['testing_token']
 FINNHUB_TOKEN = config.tokens['finnhub_token']
 SERVER_TOKEN = config.tokens['channel_token']
 
+
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 # setup finnhub
