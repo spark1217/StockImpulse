@@ -1,6 +1,6 @@
 # Proj1 Evaluation  
 ## Group 32 
-Grader: self eval
+Grader: self evaluation
   
 
 |Notes|Score|Evidence|
