@@ -7,6 +7,8 @@ This repo is for Project 1.
 StockImpulse is a discord bot retrieving stock information.  
 See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).  
 
+# Prerequiste
+Download [Python3.x](https://www.python.org/downloads/)on your system.
 
 # Installation  
 Install `requirement.txt` before running codes.
