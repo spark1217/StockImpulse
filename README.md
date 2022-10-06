@@ -24,4 +24,4 @@ tokens = {
 [Finnhub API](https://finnhub.io/docs/api/introduction) is used.   
 [https://github.com/Finnhub-Stock-API/finnhub-python](https://github.com/Finnhub-Stock-API/finnhub-python)  
 # Road Map
-[List of road map and correspond their issue](https://github.com/users/spark1217/projects/2)
+[List of road map and corresponding their issues](https://github.com/users/spark1217/projects/2)
