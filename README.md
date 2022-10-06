@@ -1,4 +1,4 @@
-![proj1](https://user-images.githubusercontent.com/111711201/194347538-973f3227-1af0-424d-9534-5434fb3ee9aa.PNG)
+
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/LICENSE)  
