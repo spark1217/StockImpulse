@@ -4,13 +4,15 @@
 
   
 # StockImpulse
-StockImpulse is a fast and easy to use discord bot for getting stock information. This means that users will have access to information about US stocks from their discord account. StockImpulse also allows users to look up information about crypto currencies.
+StockImpulse is a fast and easy to use discord bot for getting stock information. This means that users will have access to information about US stocks from their discord account. StockImpulse also allows users to look up information about crypto currencies. StockImpulse allows for up to 60 stock requests every minute and 50 requests every 10 minutes for cryptocurrency.
 ![StockImpulse in action](https://github.com/spark1217/StockImpulse/blob/main/imgs/stockimpulse_04.gif)
 
-See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).  
+# Documentation
+See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).
+The documentation for this project is automatically generated using [pdoc](https://pdoc.dev/docs/pdoc.html). 
 
 # Installation and Testing
-Step by step instructions on how to install and run StockImpulse can be found in [INSTALL.md](https://github.com/spark1217/StockImpulse/blob/main/INSTALL.md)
+Step by step instructions on how to install and test StockImpulse can be found in [INSTALL.md](https://github.com/spark1217/StockImpulse/blob/main/INSTALL.md)
   
 # APIs  
 The [Finnhub API](https://finnhub.io/docs/api/introduction) is used for information regarding stocks alongside the [finnhub-python](https://github.com/Finnhub-Stock-API/finnhub-python) python package.   
