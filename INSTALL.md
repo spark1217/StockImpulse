@@ -10,6 +10,8 @@ These are step by step instructions on how to start developing using our reposit
 tokens = {
     'discord_token': "YOUR DISCORD BOT TOKEN HERE",
     'finnhub_token': "YOUR FINNHUB API TOKEN HERE"
+    'testing_token': "YOUR TEST BOT TOKEN HERE"
+    'channel_token': "YOUR CHANNEL ID HERE"
 }
 ```
 
