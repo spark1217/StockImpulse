@@ -28,6 +28,9 @@ You will need to create your own discord bot in order to run the program.
 7) Scroll down and make sure your bot has access to all of the ```Privileged Gateway Intents```
 8) Invite the discord bot to the server you want it in
 
+## Testing
+In order to run the tests for the bot you will need a second testing bot. You can create this bot using the same steps as above, but giving the testing bot a different name. You will also need to get the id for the discord channel you want to test the bot in. The ```channel_token``` can be found by right clicking the discord channel you want and copying it's ID.
+
 ## Get a FinnHub API Key
 You will also need an API key for FinnHub to get stock information.
 1) Go to the [FinnHub Homepage](https://finnhub.io/)
