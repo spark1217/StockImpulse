@@ -57,4 +57,4 @@ jobs:
           
       # Runs a set of commands using the runners shell
       - name: Run a bot test
-        run: python src/stock_impulse.py; python test/test.py
+        run: (python src/stock_impulse.py) & (python test/test.py)
