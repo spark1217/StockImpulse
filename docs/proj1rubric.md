@@ -5,7 +5,7 @@ Grader: self evaluation
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|66||
+|Total|221||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/spark1217/StockImpulse/graphs/contributors|
