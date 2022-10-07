@@ -40,6 +40,6 @@ jobs:
           }
           EOF
       # Runs a set of commands using the runners shell
-      # - name: Run a bot test
-      #  working-directory: ./test
-      #  run: python test.py; timeout -k 10s
+      - name: Run a bot test
+        working-directory: ./test
+        run: python test.py
