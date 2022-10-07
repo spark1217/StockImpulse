@@ -37,7 +37,7 @@ jobs:
           tokens = {
             'discord_token':"${{ secrets.DISCORD_TOKEN }}",
             'finnhub_token':"${{ secrets.FINNHUB_TOKEN }}",
-            'testing_token':"${{ secrets.DISCORD_TOKEN }}",
+            'testing_token':"${{ secrets.TESTING_TOKEN }}",
             'channel_token':"${{ secrets.CHANNEL_TOKEN }}"
           }
           EOF
