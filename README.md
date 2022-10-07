@@ -1,33 +1,20 @@
 ![proj1](https://user-images.githubusercontent.com/111711201/194371953-c099603c-84ad-4ea0-bcd0-f443b247993b.PNG)
 
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/LICENSE)  
-[![DOI](https://zenodo.org/badge/540581485.svg)](https://zenodo.org/badge/latestdoi/540581485)  
-[![badge](https://github.com/spark1217/StockImpulse/actions/workflows/build.yml/badge.svg)](https://github.com/spark1217/StockImpulse/blob/main/.github/workflows/build.yml) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/LICENSE)   [![DOI](https://zenodo.org/badge/540581485.svg)](https://zenodo.org/badge/latestdoi/540581485)   [![badge](https://github.com/spark1217/StockImpulse/actions/workflows/build.yml/badge.svg)](https://github.com/spark1217/StockImpulse/blob/main/.github/workflows/build.yml) 
 
   
 # StockImpulse
-This repo is for Project 1.
-StockImpulse is a discord bot retrieving stock information.  
+StockImpulse is a fast and easy to use discord bot for getting stock information. This means that users will have access to information about US stocks from their discord account. StockImpulse also allows users to look up information about crypto currencies.
+![StockImpulse in action](https://github.com/spark1217/StockImpulse/blob/main/imgs/stockimpulse_04.gif)
+
 See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).  
 
-# Prerequiste
-Download [Python3.x](https://www.python.org/downloads/) on your system.
-
-# Installation  
-Install `requirement.txt` before running codes.
-
-# Configuration  
-Create `config.py` in the `src` folder. In the `config.py` file, add your valid tokens for discord and finnhub.  
-```
-tokens = {
-    'discord_token': "YOUR_DISCORD_TOKEN",
-    'finnhub_token': "YOUR_FINNHUB_TOKEN"
-}
-```  
+# Installation and Testing
+Step by step instructions on how to install and run StockImpulse can be found in [INSTALL.md](https://github.com/spark1217/StockImpulse/blob/main/INSTALL.md)
   
-# Stock API  
-[Finnhub API](https://finnhub.io/docs/api/introduction) is used.   
-[https://github.com/Finnhub-Stock-API/finnhub-python](https://github.com/Finnhub-Stock-API/finnhub-python)  
+# APIs  
+The [Finnhub API](https://finnhub.io/docs/api/introduction) is used for information regarding stocks alongside the [finnhub-python](https://github.com/Finnhub-Stock-API/finnhub-python) python package.   
+The [Binance API](https://github.com/Finnhub-Stock-API/finnhub-python) is used for information regarding crypto currency.
+
 # Road Map
-[List of road map and corresponding their issues](https://github.com/users/spark1217/projects/2)
+The [road map](https://github.com/users/spark1217/projects/2) contains plans for future implementation ideas to enhance and expand StockImpulse.
