@@ -31,6 +31,8 @@ You will need to create your own discord bot in order to run the program.
 ## Testing
 In order to run the tests for the bot you will need a second testing bot. You can create this bot using the same steps as above, but giving the testing bot a different name. You will also need to get the id for the discord channel you want to test the bot in. The ```channel_token``` can be found by right clicking the discord channel you want and copying it's ID.
 
+To run manually you will need to open two different consoles in your development software, run the StockImpulse class in one and then run the test class in the other. This will allow you to see test results before commiting. Automatic testing is already set up to run both classes at the same time. 
+
 ## Get a FinnHub API Key
 You will also need an API key for FinnHub to get stock information.
 1) Go to the [FinnHub Homepage](https://finnhub.io/)
