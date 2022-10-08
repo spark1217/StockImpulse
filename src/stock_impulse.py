@@ -94,7 +94,7 @@ async def crypto(ctx, crypto_name):
 async def info(ctx):
     """Prints the information of how to use different commands."""
 
-    inf = "The following commands can be used to access the bot. \n!stock followed by the stock ticker will give you that information. \n!crypto followed by the crypto ticker will return that information"
+    inf = "The following commands can be used to access the bot.\n\n'!price' followed by the stock ticker will give you the current price of that stock. For example '!price META' will return the current stock price of Facebook stock\n\n'!stock' followed by the stock ticker will give you detailed information of that stock. For example '!stock IBM' will return info of IBM stock.\n\n!crypto followed by the crypto ticker will return that information. For example '!crypto ETH' will return info of Ethereum.\n\n'!info' is this command. A bit self explanatory :)"
 
     await ctx.send(f"```Info: {inf}```")
 
