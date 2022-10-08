@@ -19,6 +19,13 @@ DISCORD_TOKEN = config.tokens['discord_token']
 # setup discord bot
 client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
+@client.event
+async def on_guild_join(guild):
+    for channel in guild.text_channels:
+        if channel.permissions_for(guild.me).send_messages:
+            await channel.send("Hello! I am StockImpulse. My purpose is to serve you with your stock information at your comfort. Type '!info' to see what I can do :)")
+        break
+
 # print message when ready
 @client.event
 async def on_ready():
