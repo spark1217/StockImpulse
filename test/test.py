@@ -43,6 +43,7 @@ async def on_ready():
     fails += await test_invalid_stock()
     fails += await test_crypto()
     fails += await test_invalid_crypto()
+    fails += await test_info()
     assert fails == 0
     await client.close()
 
@@ -152,6 +153,20 @@ async def test_invalid_crypto():
         return 0
     except asyncio.TimeoutError:
         return 1
+
+async def test_info():
+    """ Tests the bot's reaction to the info command"""
+    channel = discord.utils.get(client.get_all_channels(), name='bot-testing')
+    await channel.send("!info")
+
+    content = "There was an issue getting the information."
+    try:
+        await client.wait_for('message', timeout=10, check=lambda x: x.guild.id == channel.guild.id
+        and x.author.name == 'StockImpulse' and str(content) in x.content)
+        return 0
+    except asyncio.TimeoutError:
+        return 1
+
 
 if __name__ == '__main__':
     client.run(DISCORD_TOKEN)
