@@ -11,6 +11,7 @@ import stocks
 import cryptos
 
 
+
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
 """Discord API Token"""
@@ -88,6 +89,14 @@ async def crypto(ctx, crypto_name):
 # https://github.com/Finnhub-Stock-API/finnhub-python
 #res = finnhub_client.stock_candles('AAPL', 'D', 1590988249, 1591852249)
 #print(res)
+
+@client.command(name="info")
+async def info(ctx):
+    """Prints the information of how to use different commands."""
+
+    inf = "The following commands can be used to access the bot. \n!stock followed by the stock ticker will give you that information. \n!crypto followed by the crypto ticker will return that information"
+
+    await ctx.send(f"```Info: {inf}```")
 
 if __name__ == "__main__":
     client.run(DISCORD_TOKEN)
