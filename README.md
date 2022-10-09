@@ -22,3 +22,11 @@ The [Binance API](https://github.com/Finnhub-Stock-API/finnhub-python) is used f
 
 # Road Map
 The [road map](https://github.com/users/spark1217/projects/2) contains plans for future implementation ideas to enhance and expand StockImpulse.
+
+# Contributors
+| [Seoyeong Park](https://github.com/spark1217)
+| [Chris Kastritis](https://github.com/Chris-Kastritis)
+| [Safaa Mohamed](https://github.com/Safaa26)
+| [Collin Riggs](https://github.com/CMRiggs)
+| [Soham Bapat](https://github.com/sohambapat)
+|
