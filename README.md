@@ -11,7 +11,7 @@ To get started with using StockImpulse use ```!info``` to find out what it can d
 
 # Documentation
 See our published documentation [here](https://spark1217.github.io/StockImpulse/src/index.html).
-The documentation for this project is automatically generated using [pdoc](https://pdoc.dev/docs/pdoc.html). 
+The documentation for StockImpulse is automatically generated using [pdoc](https://pdoc.dev/docs/pdoc.html). 
 
 # Installation and Testing
 Step by step instructions on how to install and test StockImpulse can be found in [INSTALL.md](https://github.com/spark1217/StockImpulse/blob/main/INSTALL.md)
