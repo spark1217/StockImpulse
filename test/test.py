@@ -159,7 +159,7 @@ async def test_info():
     channel = discord.utils.get(client.get_all_channels(), name='bot-testing')
     await channel.send("!info")
 
-    content = "There was an issue getting the information."
+    content = "The following commands can be used to access the bot.\n\n'!price' followed by the stock ticker will give you the current price of that stock. For example '!price META' will return the current stock price of Facebook stock\n\n'!stock' followed by the stock ticker will give you detailed information of that stock. For example '!stock IBM' will return info of IBM stock.\n\n'!crypto' followed by the crypto ticker will return that information. For example '!crypto ETH' will return info of Ethereum.\n\n'!info' is this command. A bit self explanatory :)"
     try:
         await client.wait_for('message', timeout=10, check=lambda x: x.guild.id == channel.guild.id
         and x.author.name == 'StockImpulse' and str(content) in x.content)
