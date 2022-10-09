@@ -10,8 +10,6 @@ import config
 import stocks
 import cryptos
 
-
-
 # tokens
 DISCORD_TOKEN = config.tokens['discord_token']
 """Discord API Token"""
@@ -21,9 +19,13 @@ client = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 @client.event
 async def on_guild_join(guild):
+    """
+    Sends a message when joining a discord guild (server) explaining how to use the bot.
+    """
     for channel in guild.text_channels:
         if channel.permissions_for(guild.me).send_messages:
-            await channel.send("Hello! I am StockImpulse. My purpose is to serve you with your stock information at your comfort. Type '!info' to see what I can do :)")
+            await channel.send("""Hello! I am StockImpulse. My purpose is to serve you
+            with your stock information at your comfort. Type '!info' to see what I can do :)""")
         break
 
 # print message when ready
@@ -101,17 +103,25 @@ async def crypto(ctx, crypto_name):
 async def info(ctx):
     """Prints the information of how to use different commands."""
 
-    inf = "The following commands can be used to access the bot.\n\n'!price' followed by the stock ticker will give you the current price of that stock. For example '!price META' will return the current stock price of Facebook stock\n\n'!stock' followed by the stock ticker will give you detailed information of that stock. For example '!stock IBM' will return info of IBM stock.\n\n'!crypto' followed by the crypto ticker will return that information. For example '!crypto ETH' will return info of Ethereum.\n\n'!info' is this command. A bit self explanatory :)"
+    inf = ("The following commands can be used to access the bot.\n\n"
+"'!price' followed by the stock ticker will give you the current price of that stock. "
+"For example '!price META' will return the current stock price of Facebook stock."
+"\n\n'!stock' followed by the stock ticker will give you detailed information of that stock. "
+"For example '!stock IBM' will return info of IBM stock."
+"\n\n'!crypto' followed by the crypto ticker will return that information. "
+"For example '!crypto ETH' will return info of Ethereum."
+"\n\n'!info' is this command. A bit self explanatory :)")
 
     await ctx.send(f"```Info: {inf}```")
 
 if __name__ == "__main__":
     client.run(DISCORD_TOKEN)
 
-#---------------------------------------------------------#
+#--------------------------------------------------------------------------#
 # Everything below this line is for documentation purposes
 # and does not perform any function.
-#---------------------------------------------------------#
+# (Anything with "@client.command" does not get automatically documented)
+#--------------------------------------------------------------------------#
 
 async def stock_command(ctx, stock_name):
     """Prints information regarding a given stock. This command is run by typing "!stock "stock"".
@@ -161,3 +171,17 @@ async def crypto_command(ctx, crypto_name):
         return
     cprice =  round(float(data['price']), 3)
     await ctx.send(f"```{data['symbol']} price is ${cprice}```")
+
+async def info_command(ctx):
+    """Prints the information of how to use different commands."""
+
+    inf = ("The following commands can be used to access the bot.\n\n"
+"'!price' followed by the stock ticker will give you the current price of that stock. "
+"For example '!price META' will return the current stock price of Facebook stock."
+"\n\n'!stock' followed by the stock ticker will give you detailed information of that stock. "
+"For example '!stock IBM' will return info of IBM stock."
+"\n\n'!crypto' followed by the crypto ticker will return that information. "
+"For example '!crypto ETH' will return info of Ethereum."
+"\n\n'!info' is this command. A bit self explanatory :)")
+
+    await ctx.send(f"```Info: {inf}```")

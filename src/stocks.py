@@ -10,7 +10,6 @@ FINNHUB_TOKEN = config.tokens['finnhub_token']
 """FinnHub API Token"""
 
 
-
 def setup_finnhub():
     """
     This method makes sure the finnhub_client is setup before trying to use finnhub
