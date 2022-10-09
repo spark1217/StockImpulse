@@ -86,7 +86,7 @@ Grader: self evaluation
 |Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software?|0||
 |Does your website state how many projects and users are associated with your project?|3|Allow contributors mentioned in ReadME|
 |Do you provide success stories on your website?|0||
-|Do you list your important partners and collaborators on your website?|0|Professor isn't listed :(|
+|Do you list your important partners and collaborators on your website?|1|https://github.com/spark1217/StockImpulse/graphs/contributors|
 |Do you list your project's publications on your website or link to a resource where these are available?|3|No publications to link.|
 |Do you list third-party publications that refer to your software on your website or link to a resource where these are available?|3|No one to reference.|
 |Can users subscribe to notifications to changes to your source code repository?|0||
