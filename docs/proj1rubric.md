@@ -81,7 +81,7 @@ Grader: self evaluation
 |Do you have an automated test suite for your software?|3|There are automated tests|
 |Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?|3|https://github.com/spark1217/StockImpulse/actions|
 |Do you use continuous integration, automatically running tests whenever changes are made to your source code?|3|https://github.com/spark1217/StockImpulse/actions|
-|Are your test results publicly visible?|1|Tests could be run independently to check.|
+|Are your test results publicly visible?|3|https://github.com/spark1217/StockImpulse/actions|
 |Are all manually-run tests documented?|0||
 |Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software?|0||
 |Does your website state how many projects and users are associated with your project?|3|Allow contributors mentioned in ReadME|
