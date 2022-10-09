@@ -79,8 +79,8 @@ Grader: self evaluation
 |Can you download dependencies using a dependency management tool or package manager?|3||
 |Do you have tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful?|3|There are automated tests|
 |Do you have an automated test suite for your software?|3|There are automated tests|
-|Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?|0||
-|Do you use continuous integration, automatically running tests whenever changes are made to your source code?|0||
+|Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?|3|https://github.com/spark1217/StockImpulse/actions|
+|Do you use continuous integration, automatically running tests whenever changes are made to your source code?|3|https://github.com/spark1217/StockImpulse/actions|
 |Are your test results publicly visible?|1|Tests could be run independently to check.|
 |Are all manually-run tests documented?|0||
 |Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software?|0||
