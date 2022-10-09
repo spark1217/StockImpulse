@@ -99,7 +99,7 @@ Grader: self evaluation
 |Does each of your source code files include a copyright statement?|0||
 |Does your website and documentation clearly state the licence of your software?|3|https://github.com/spark1217/StockImpulse/blob/main/LICENSE |
 |Is your software released under an open source licence?|3|GNU General Public License v3.0|
-|Is your software released under an OSI-approved open-source licence?|0|Who knows? Not me.|
+|Is your software released under an OSI-approved open-source licence?|3|https://github.com/spark1217/StockImpulse/blob/main/LICENSE|
 |Does each of your source code files include a licence header?|3|https://github.com/spark1217/StockImpulse/tree/main/docs|
 |Do you have a recommended citation for your software?|2|https://github.com/spark1217/StockImpulse/blob/main/CITATION.md |
 |Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)?|3|https://github.com/users/spark1217/projects/2|
