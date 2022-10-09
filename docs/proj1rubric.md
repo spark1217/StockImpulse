@@ -5,7 +5,7 @@ Grader: self evaluation
 
 |Notes|Score|Evidence|
 |-----|-----|--------|
-|Total|221||
+|Total|248||
 |Video1|0|| 
 |Video2|0||
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/spark1217/StockImpulse/graphs/contributors|
@@ -20,9 +20,9 @@ Grader: self evaluation
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|https://github.com/spark1217/StockImpulse/tree/main/docs|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|https://github.com/spark1217/StockImpulse#readme|
 |Use of version control tools|3|Used git|
-|Use of style checkers |0|Could not find evidence of any style checker|
-|Use of code formatters. |0|Could not find evidence of any style checker|
-|Use of syntax checkers. |0|Could not find evidence of any style checker|
+|Use of style checkers |3|https://github.com/spark1217/StockImpulse/blob/main/.vscode/settings.json|
+|Use of code formatters. |3|https://github.com/spark1217/StockImpulse/blob/main/.vscode/settings.json|
+|Use of syntax checkers. |3|https://github.com/spark1217/StockImpulse/blob/main/.vscode/settings.json|
 |Use of code coverage |0|Could not find evidence of code coverage, but there are tests|
 |Other automated analysis tools|3|https://github.com/spark1217/StockImpulse/actions |
 |Test cases exist|3|https://github.com/spark1217/StockImpulse/blob/main/test/test.py |
@@ -79,19 +79,19 @@ Grader: self evaluation
 |Can you download dependencies using a dependency management tool or package manager?|3||
 |Do you have tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful?|3|There are automated tests|
 |Do you have an automated test suite for your software?|3|There are automated tests|
-|Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?|0||
-|Do you use continuous integration, automatically running tests whenever changes are made to your source code?|0||
-|Are your test results publicly visible?|1|Tests could be run independently to check.|
+|Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?|3|https://github.com/spark1217/StockImpulse/actions|
+|Do you use continuous integration, automatically running tests whenever changes are made to your source code?|3|https://github.com/spark1217/StockImpulse/actions|
+|Are your test results publicly visible?|3|https://github.com/spark1217/StockImpulse/actions|
 |Are all manually-run tests documented?|0||
 |Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software?|0||
 |Does your website state how many projects and users are associated with your project?|3|Allow contributors mentioned in ReadME|
 |Do you provide success stories on your website?|0||
-|Do you list your important partners and collaborators on your website?|0|Professor isn't listed :(|
+|Do you list your important partners and collaborators on your website?|1|https://github.com/spark1217/StockImpulse/graphs/contributors|
 |Do you list your project's publications on your website or link to a resource where these are available?|3|No publications to link.|
 |Do you list third-party publications that refer to your software on your website or link to a resource where these are available?|3|No one to reference.|
 |Can users subscribe to notifications to changes to your source code repository?|0||
 |If your software is developed as an open source project (and, not just a project developing open source software), do you have a governance model?|1|Self-governance|
-|Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project?|0|I hope no|
+|Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project?|3||
 |Do you have a contributions policy?|3|https://github.com/spark1217/StockImpulse/blob/main/CONTRIBUTING.md |
 |Is your contributions' policy publicly available?|3||
 |Do contributors keep the copyright/IP of their contributions?|3|GNU General Public License v3.0|
@@ -99,7 +99,7 @@ Grader: self evaluation
 |Does each of your source code files include a copyright statement?|0||
 |Does your website and documentation clearly state the licence of your software?|3|https://github.com/spark1217/StockImpulse/blob/main/LICENSE |
 |Is your software released under an open source licence?|3|GNU General Public License v3.0|
-|Is your software released under an OSI-approved open-source licence?|0|Who knows? Not me.|
+|Is your software released under an OSI-approved open-source licence?|3|https://github.com/spark1217/StockImpulse/blob/main/LICENSE|
 |Does each of your source code files include a licence header?|3|https://github.com/spark1217/StockImpulse/tree/main/docs|
 |Do you have a recommended citation for your software?|2|https://github.com/spark1217/StockImpulse/blob/main/CITATION.md |
 |Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)?|3|https://github.com/users/spark1217/projects/2|
