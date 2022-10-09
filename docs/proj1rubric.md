@@ -91,7 +91,7 @@ Grader: self evaluation
 |Do you list third-party publications that refer to your software on your website or link to a resource where these are available?|3|No one to reference.|
 |Can users subscribe to notifications to changes to your source code repository?|0||
 |If your software is developed as an open source project (and, not just a project developing open source software), do you have a governance model?|1|Self-governance|
-|Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project?|0|I hope no|
+|Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project?|3||
 |Do you have a contributions policy?|3|https://github.com/spark1217/StockImpulse/blob/main/CONTRIBUTING.md |
 |Is your contributions' policy publicly available?|3||
 |Do contributors keep the copyright/IP of their contributions?|3|GNU General Public License v3.0|
